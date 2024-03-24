@@ -59,15 +59,15 @@ server.listen(PORT);
 
 /**
  * # Server mainly used for following 3 purpose
- * 1. serving static files like images or other assets
- * 2. templating ie. dynamic site generation / server side rendering
- * 3. API creation -> serving data
+ * 1. serving static files like images or other assets like css file we are serving here
+ * 2. templating ie. dynamic site generation / server side rendering => our products page in this case
+ * 3. API creation -> serving data, so frontend applications can fetch that data and use it.
  */
 
-// res.writeHead(status,msg)  msg will be shown after status code in network tag  
-// res.end  to send the response - takes string as an input
+// res.writeHead(<status code>,<msg as a string>)  msg will be shown after status code in network tag  
+// res.end(<content as a string>)  to send the response - takes string as an input
 // res.setHeader(name,value) - to set headers on response object
 // listening for request on particular network port
 // favicon.ico request google does from it's side to get image for favicon
 // though browser search bar we can only send get request. To send other type of request we can use tool like postman
-// if our end() is executing multiple time we get error. cause once end run means we already send response to client we cant again run it.
+// if our end() is executing multiple time we get error. cause once end run means we already send response to client we cant again run it or set response related headers again. So make sure that after end() we are not trying to set headers again.
